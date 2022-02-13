@@ -20,6 +20,9 @@ Route::get('/', 'HomeController@index')->name('welcome');
 // *************** AUTHENTICATION/ADMIN ROUTES ***************
 Auth::routes();
 
+// Se voglio disabilitare la rotta di registrazione
+//Auth::routes(['register' => false]);
+
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
 
   Route::get('/', 'HomeController@index')->name('dashboard');
