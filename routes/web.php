@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // *************** PUBLIC/GUEST ROUTES ***************
 
 Route::get('/', 'HomeController@index')->name('welcome');
+Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
 // *************** AUTHENTICATION/ADMIN ROUTES ***************
 Auth::routes();
