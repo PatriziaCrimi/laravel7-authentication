@@ -9,7 +9,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <a class="btn btn-dark float-right" href="#">New Product</a>
+        <a class="btn btn-dark float-right" href="{{route('admin.products.create')}}">New Product</a>
       </div>
     </div>
     <div class="row">
