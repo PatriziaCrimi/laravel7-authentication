@@ -31,7 +31,7 @@
                 <td>{{number_format($product->price, '2', ',', '.')}} &euro;</td>
                 <td>
                   <a href="{{route('admin.products.show', ['product' => $product->id])}}" class="btn btn-info">Details</a>
-                  <a href="#" class="btn btn-light">Edit</a>
+                  <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="btn btn-light">Edit</a>
                   <button type="submit" name="button" class="btn btn-danger">Delete</button>
                 </td>
               </tr>

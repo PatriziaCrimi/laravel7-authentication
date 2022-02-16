@@ -68,9 +68,13 @@ class ProductController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id)
+  public function edit(Product $product)
   {
-      //
+    if($product) {
+      return view('admin.products.edit', compact('product'));
+    } else {
+      abort(404);
+    }
   }
 
   /**
@@ -80,9 +84,11 @@ class ProductController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(Request $request, Product $product)
   {
-      //
+    $data = $request->all();
+    $product->update($data);
+    return redirect()->route('admin.products.show', ['product' => $product->id]);
   }
 
   /**
