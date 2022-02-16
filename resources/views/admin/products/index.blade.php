@@ -9,7 +9,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <a class="btn btn-dark" href="#">New Product</a>
+        <a class="btn btn-dark float-right" href="#">New Product</a>
       </div>
     </div>
     <div class="row">
@@ -30,7 +30,7 @@
                 <td>{{$product->name}}</td>
                 <td>{{number_format($product->price, '2', ',', '.')}} &euro;</td>
                 <td>
-                  <a href="#" class="btn btn-info">Details</a>
+                  <a href="{{route('admin.products.show', ['product' => $product->id])}}" class="btn btn-info">Details</a>
                   <a href="#" class="btn btn-light">Edit</a>
                   <button type="submit" name="button" class="btn btn-danger">Delete</button>
                 </td>

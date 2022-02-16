@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        Products List
+        <h1>Products List</h1>
       </div>
     </div>
     <div class="row">
@@ -27,7 +27,7 @@
                     <td>{{$product->name}}</td>
                     <td>{{number_format($product->price, '2', ',', '.')}} &euro;</td>
                     <td>
-                      <a href="#" class="btn btn-info">Details</a>
+                      <a href="{{route('products.show', ['product' => $product->id])}}" class="btn btn-info">Details</a>
                     </td>
                   </tr>
                 @endforeach

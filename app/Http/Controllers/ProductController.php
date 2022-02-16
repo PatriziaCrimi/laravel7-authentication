@@ -13,4 +13,12 @@ class ProductController extends Controller
     ];
     return view('guest.products.index', $data);
   }
+
+  public function show($id) { //Dependency Injection
+    $product = Product::find($id);
+    $data = [
+      'product' => $product
+    ];
+    return view('guest.products.show', $data);
+  }
 }

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::get('/products', 'ProductController@index')->name('products.index');
+Route::get('/products{product}', 'ProductController@show')->name('products.show');
 Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
 // *************** AUTHENTICATION/ADMIN ROUTES ***************
