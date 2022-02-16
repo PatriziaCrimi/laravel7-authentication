@@ -27,4 +27,6 @@ Auth::routes();
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
 
   Route::get('/', 'HomeController@index')->name('dashboard');
+  // Resource Controller for Products
+  Route::resource('/products', 'ProductController');
 });
