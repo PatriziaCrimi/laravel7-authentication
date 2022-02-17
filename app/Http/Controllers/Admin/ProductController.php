@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Buyer;
 
 class ProductController extends Controller
 {
@@ -28,7 +29,10 @@ class ProductController extends Controller
    */
   public function create()
   {
-    return view('admin.products.create');
+    $data = [
+      'buyers' => Buyer::all()
+    ];
+    return view('admin.products.create', $data);
   }
 
   /**
@@ -70,8 +74,9 @@ class ProductController extends Controller
    */
   public function edit(Product $product)
   {
+    $buyers = Buyer::all();
     if($product) {
-      return view('admin.products.edit', compact('product'));
+      return view('admin.products.edit', compact('product', 'buyers'));
     } else {
       abort(404);
     }

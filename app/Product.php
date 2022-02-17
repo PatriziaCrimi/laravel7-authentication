@@ -9,7 +9,7 @@ class Product extends Model
 {
   protected $table = 'products';
 
-  protected $fillable = ['name', 'price', 'description', 'availability'];
+  protected $fillable = ['name', 'price', 'description', 'availability', 'buyer_id'];
 
   public function buyer() {
     return $this->belongsTo('App\Buyer');

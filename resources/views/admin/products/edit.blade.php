@@ -37,6 +37,19 @@
               <span>Not available</span>
             </div>
           </div>
+          <div class="form-group">
+            <label for="buyer">Buyer</label>
+            <select class="form control" name="buyer_id">
+              <option value="">--select--</option>
+              @foreach ($buyers as $key => $buyer)
+                <option value="{{$buyer->id}}"
+                  {{$buyer->id == $product->buyer_id ? 'selected=selected': ''}}>
+                  {{$buyer->name}}
+                  {{$buyer->surname}}
+                </option>
+              @endforeach
+            </select>
+          </div>
           <button type="submit" class="btn btn-success">Submit</button>
         </form>
       </div>
