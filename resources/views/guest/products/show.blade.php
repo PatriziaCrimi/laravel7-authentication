@@ -32,6 +32,15 @@
             Not available
           </li>
           @endif
+          <li>
+            Buyer:
+            @if ($product->buyer)
+              {{$product->buyer->name}}
+              {{$product->buyer->surname}}
+            @else
+              -
+            @endif
+          </li>
         </ul>
       </div>
     </div>

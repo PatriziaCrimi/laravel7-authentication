@@ -35,6 +35,12 @@
               <span>Not available</span>
             </div>
           </div>
+          <div class="form-group">
+            <label for="buyer">Buyer</label>
+            <select class="form control" name="">
+              <option value="">--select--</option>
+            </select>
+          </div>
           <button type="submit" class="btn btn-success">Submit</button>
         </form>
       </div>

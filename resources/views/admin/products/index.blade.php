@@ -32,7 +32,7 @@
                 <td>
                   <a href="{{route('admin.products.show', ['product' => $product->id])}}" class="btn btn-info">Details</a>
                   <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="btn btn-light">Edit</a>
-                  <form action="{{route('admin.products.destroy', ['product' => $product->id])}}" method="POST">
+                  <form action="{{route('admin.products.destroy', ['product' => $product->id])}}" method="POST" class="d-inline-block">
                     @method('DELETE')
                     @csrf
                     <button type="submit" name="button" class="btn btn-danger">Delete</button>
