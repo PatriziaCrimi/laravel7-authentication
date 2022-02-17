@@ -25,5 +25,21 @@
         </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <p>
+          Products List related to this Buyer:
+        </p>
+        <ul>
+          @foreach ($buyer->products as $key => $product)
+            <li>
+              <a href="{{route('products.show', ['product' => $product->id])}}">
+                {{$product->name}}
+              </a>
+            </li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
   </div>
 @endsection

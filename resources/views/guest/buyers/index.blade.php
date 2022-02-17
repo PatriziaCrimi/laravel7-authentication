@@ -12,7 +12,9 @@
         <ul>
           @foreach ($buyers as $key => $buyer)
             <li>
-              {{$buyer->name . ' ' . $buyer->surname}}
+              <a href="{{route('buyers.show', ['buyer' => $buyer->id])}}">
+                {{$buyer->name . ' ' . $buyer->surname}}
+              </a>
             </li>
           @endforeach
         </ul>
