@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 // *************** PUBLIC/GUEST ROUTES ***************
 
 Route::get('/', 'HomeController@index')->name('welcome');
+//Products
 Route::get('/products', 'ProductController@index')->name('products.index');
 Route::get('/products{product}', 'ProductController@show')->name('products.show');
+//Buyers
+Route::get('/buyers', 'BuyerController@index')->name('buyers.index');
+Route::get('/buyers{buyer}', 'BuyerController@show')->name('buyers.show');
+//Contacts
 Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
 // *************** AUTHENTICATION/ADMIN ROUTES ***************
@@ -31,4 +36,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
   Route::get('/', 'HomeController@index')->name('dashboard');
   // Resource Controller for Products
   Route::resource('/products', 'ProductController');
+  // Resource Controller for Buyers
+  Route::resource('/buyers', 'BuyerController');
 });

@@ -35,8 +35,9 @@
           <li>
             Buyer:
             @if ($product->buyer)
-              {{$product->buyer->name}}
-              {{$product->buyer->surname}}
+              <a href="{{route('admin.buyers.show', ['buyer' => $product->buyer->id])}}">
+                {{$product->buyer->name . ' ' . $product->buyer->surname}}
+              </a>
             @else
               -
             @endif
