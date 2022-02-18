@@ -50,6 +50,18 @@
               @endforeach
             </select>
           </div>
+          <div class="form-group">
+            <p>Select the categories for this Product</p>
+              @foreach ($categories as $key => $category)
+                <div class="form-check">
+                <input name="categories[]" class="form-check-input" type="checkbox" value="{{$category->id}}"
+                {{$product->categories->contains($category) ? 'checked=checked' : ''}}>
+                <label class="form-check-label">
+                  {{$category->name}}
+                </label>
+              </div>
+              @endforeach
+          </div>
           <button type="submit" class="btn btn-success">Submit</button>
         </form>
       </div>

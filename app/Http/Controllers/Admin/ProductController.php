@@ -79,8 +79,9 @@ class ProductController extends Controller
   public function edit(Product $product)
   {
     $buyers = Buyer::all();
+    $categories = Category::all();
     if($product) {
-      return view('admin.products.edit', compact('product', 'buyers'));
+      return view('admin.products.edit', compact('product', 'buyers', 'categories'));
     } else {
       abort(404);
     }
@@ -97,6 +98,8 @@ class ProductController extends Controller
   {
     $data = $request->all();
     $product->update($data);
+    //Categories (ManyToMany)
+    $product->categories()->sync($data['categories']);
     return redirect()->route('admin.products.show', ['product' => $product->id]);
   }
 
@@ -108,6 +111,7 @@ class ProductController extends Controller
    */
   public function destroy(Product $product)
   {
+    $product->categories()->sync([]);
     $product->delete();
     return redirect()->route('admin.products.index');
   }
