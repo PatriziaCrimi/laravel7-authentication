@@ -52,7 +52,7 @@
           <ul>
             @foreach ($product->categories as $key => $category)
               <li>
-                <a href="{{route('admin.category.show', ['category' => $category->id])}}">
+                <a href="{{route('admin.categories.show', ['category' => $category->id])}}">
                   {{$category->name}}
                 </a>
               </li>

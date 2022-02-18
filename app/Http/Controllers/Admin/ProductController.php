@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Buyer;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,8 @@ class ProductController extends Controller
   public function create()
   {
     $data = [
-      'buyers' => Buyer::all()
+      'buyers' => Buyer::all(),
+      'categories' => Category::all()
     ];
     return view('admin.products.create', $data);
   }
@@ -47,6 +49,8 @@ class ProductController extends Controller
     $new_product = new Product();
     $new_product->fill($data);
     $new_product->save();
+    //Categories (ManyToMany)
+    $new_product->categories()->sync($data['categories']);
     return redirect()->route('admin.products.index');
   }
 
