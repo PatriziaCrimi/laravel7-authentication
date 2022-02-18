@@ -5,17 +5,17 @@
     <div class="row">
       <div class="col-12">
         <h1>          
-          Buyers List
+          Categories List
         </h1>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <ul>
-          @foreach ($buyers as $key => $buyer)
+          @foreach ($categories as $key => $category)
             <li>
-              <a href="{{route('admin.buyers.show', ['buyer' => $buyer->id])}}">
-                {{$buyer->name . ' ' . $buyer->surname}}
+              <a href="{{route('admin.categories.show', ['category' => $category->id])}}">
+                {{$category->name}}
               </a>
             </li>
           @endforeach

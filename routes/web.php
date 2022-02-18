@@ -22,6 +22,9 @@ Route::get('/products{product}', 'ProductController@show')->name('products.show'
 //Buyers
 Route::get('/buyers', 'BuyerController@index')->name('buyers.index');
 Route::get('/buyers{buyer}', 'BuyerController@show')->name('buyers.show');
+//Categories
+Route::get('/categories', 'CategoryController@index')->name('categories.index');
+Route::get('/categories{category}', 'CategoryController@show')->name('categories.show');
 //Contacts
 Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
@@ -38,4 +41,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
   Route::resource('/products', 'ProductController');
   // Resource Controller for Buyers
   Route::resource('/buyers', 'BuyerController');
+  //Resource Controller for Categories
+  Route::resource('/categories', 'CategoryController');
 });

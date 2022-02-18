@@ -45,5 +45,23 @@
         </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <p>Categories for this Product:</p>
+        @if($product->categories->isNotEmpty())
+          <ul>
+            @foreach ($product->categories as $key => $category)
+              <li>
+                <a href="{{route('category.show', ['category' => $category->id])}}">
+                  {{$category->name}}
+                </a>
+              </li>
+            @endforeach
+          </ul>
+        @else
+          -
+        @endif
+      </div>
+    </div>
   </div>
 @endsection

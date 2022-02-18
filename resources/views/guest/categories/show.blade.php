@@ -4,23 +4,14 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Buyer Details # {{$buyer->id}}</h1>
+        <h1>Category Details # {{$category->id}}</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <ul>
           <li>
-            Name: {{$buyer->name . ' ' . $buyer->surname}}
-          </li>
-          <li>
-            Address: {{$buyer->address}}
-          </li>
-          <li>
-            City: {{$buyer->city}}
-          </li>
-          <li>
-            Country: {{$buyer->country}}
+            Name: {{$category->name}}
           </li>
         </ul>
       </div>
@@ -28,11 +19,11 @@
     <div class="row">
       <div class="col-12">
         <p>
-          Products List related to this Buyer:
+          Products List related to this Category:
         </p>
-        @if ($buyer->products->isNotEmpty())
+        @if ($category->products->isNotEmpty())
           <ul>
-            @foreach ($buyer->products as $key => $product)
+            @foreach ($category->products as $key => $product)
               <li>
                 <a href="{{route('products.show', ['product' => $product->id])}}">
                   {{$product->name}}

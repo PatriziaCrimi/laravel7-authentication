@@ -40,6 +40,9 @@
                           <a class="nav-link" href="{{ route('buyers.index') }}">Buyers</a>
                       </li>
                       <li class="nav-item">
+                          <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                      </li>
+                      <li class="nav-item">
                           <a class="nav-link" href="{{ route('contacts') }}">Contatti</a>
                       </li>
                     </ul>
