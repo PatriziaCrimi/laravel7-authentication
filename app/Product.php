@@ -14,4 +14,8 @@ class Product extends Model
   public function buyer() {
     return $this->belongsTo('App\Buyer');
   }
+
+  public function categories() {
+    return $this->belongsToMany('App\Category');
+  }
 }
